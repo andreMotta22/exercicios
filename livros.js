@@ -19,6 +19,18 @@ class Livros {
       console.log("Infelizmente o livro não está disponivel");
     }
   }
+  infoBook() {
+    console.log(
+      "Livro: " +
+        this.#titulo +
+        " " +
+        this.#autor +
+        " " +
+        this.#ano +
+        " " +
+        this.#emprestado
+    );
+  }
   static ordernar(livro) {
     //   modifica o array
     livro.sort((a, b) => a.ano - b.ano);
@@ -57,6 +69,20 @@ class Hq extends Livros {
     super(titulo, autor, ano);
     this.#ilustrador = ilustrador;
   }
+  infoBook() {
+    console.log(
+      "Manga: " +
+        this.titulo +
+        " " +
+        this.autor +
+        " " +
+        this.ano +
+        " " +
+        this.emprestado +
+        " " +
+        this.#ilustrador
+    );
+  }
 }
 
 const manga = new Hq(
@@ -66,5 +92,5 @@ const manga = new Hq(
   2000,
   (emprestado = false)
 );
-manga.ano = 500;
 console.log(manga);
+manga.infoBook();
